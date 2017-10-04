@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flip Stitch Pillow</title>
+	<link rel="stylesheet" type="text/css" href="type.css">
+</head>
+<body>
+	<div class="button-holder">
+		<a href="index.html">back</a>
+		<a href="shape.html">choose a shape</a>
+	</div>
+	<h1>Choose your pillow type.</h1>
+	<main class="flex-holder">
+		<div class="item" id="button1" onclick="onClick(1);">
+			<div class="img"></div>
+			<div class="description">couch pillow</div>
+		</div>
+		<div class="item" id="button2" onclick="onClick(2);">
+			<div class="img"></div>
+			<div class="description">bed pillow</div>
+		</div>
+		<div class="item" id="button3" onclick="onClick(3);">
+			<div class="img"></div>
+			<div class="description">round pillow</div>
+		</div>
+		<div class="item" id="button4" onclick="onClick(4);">
+			<div class="img"></div>
+			<div class="description">floor pouf pillow</div>
+		</div>
+	</main>
+
+	<script type="text/javascript">
+		var buttons = document.getElementsByClassName("item");
+		function onClick(n){
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].classList.remove("selected");
+			}
+			document.getElementById('button'+n).classList.add("selected");					
+		};
+	</script>
+</body>
+</html>

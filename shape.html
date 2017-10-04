@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flip Stitch Pillow</title>
+	<link rel="stylesheet" type="text/css" href="type.css">
+</head>
+<body>
+	<div class="button-holder">
+		<a href="type.html">choose a type</a>
+		<a href="detail.html">done</a>
+	</div>
+	<h1>Choose your pillow shape.</h1>
+	<main class="flex-holder">
+		<div class="item" id="button1" onclick="onClick(1);">
+			<div class="img"></div>
+			<div class="description">square</div>
+		</div>
+		<div class="item" id="button2" onclick="onClick(2);">
+			<div class="img"></div>
+			<div class="description">round</div>
+		</div>
+		<div class="item" id="button3" onclick="onClick(3);">
+			<div class="img"></div>
+			<div class="description">dog</div>
+		</div>
+		<div class="item" id="button4" onclick="onClick(4);">
+			<div class="img"></div>
+			<div class="description">bear</div>
+		</div>
+		<div class="item" id="button5" onclick="onClick(5);">
+			<div class="img"></div>
+			<div class="description">bunny</div>
+		</div>
+		<div class="item" id="button6" onclick="onClick(6);">
+			<div class="img"></div>
+			<div class="description">cat</div>
+		</div>
+		<div class="item" id="button7" onclick="onClick(7);">
+			<div class="img"></div>
+			<div class="description">custom</div>
+		</div>
+	</main>
+
+	<script type="text/javascript">
+		var buttons = document.getElementsByClassName("item");
+		function onClick(n){
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].classList.remove("selected");
+			}
+			document.getElementById('button'+n).classList.add("selected");					
+		};
+	</script>
+</body>
+</html>

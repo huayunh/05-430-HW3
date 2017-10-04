@@ -1,0 +1,115 @@
+* {
+	text-decoration: none;
+	font-family: sans-serif;
+}
+
+.button-holder {
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.button-holder a {
+	border: 2px crimson solid;
+	border-radius: 999px;
+	padding: 5px 10px;
+	font-size: 120%;
+	color: crimson;
+}
+
+.button-holder a+a {
+	right: 0;
+	position: absolute;
+}
+
+.button-holder a:hover {
+	background-color: crimson;
+	color: white;
+	transition-duration: 0.5s;
+}
+
+body {
+	padding: 30px;
+}
+
+.flex-holder {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-holder > div {
+	width: 300px;
+	height: 300px;
+	background: #ddd;
+	margin: 10px;
+	border: 2px white solid;
+	box-shadow: 0 0 5px grey;
+}
+
+/* faked picture */
+.img {
+	width: 100%;
+	height: 70%;
+	background-color: crimson;
+}
+
+/* descriptions */
+.description {
+	width: 100%;
+	text-align: center;
+	padding-top: 5%;
+}
+
+.flex-holder > div.selected {
+	border: 2px crimson solid;
+	transition-duration: 0.4s;
+}
+
+
+/* for detail.html */
+main {
+	margin: 5vh 10vw;
+	position: relative;
+}
+
+#left {
+	width: 30vw;
+}
+
+#item-pic {
+	background-color: #ddd;
+	width: 30vw;
+	height: 30vw;
+
+}
+
+#left p {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#right {
+	right: 0;
+	top: 0;
+	position: absolute;
+	width: 50%;
+}
+
+.color {
+	position: relative;
+	border-radius: 66px;
+	width: 20px;
+	height: 20px;
+	margin: 10px;
+	margin-top: 0px;
+
+}
+
+#right p {
+	margin-top: 3px;
+	margin-bottom: 7px;
+}
+
+.color:nth-child(1) {background: #ccc;}
+.color:nth-child(2) {background: #bad;}
+.color:nth-child(3) {background: #eaf;}
+.color:nth-child(4) {background: #3fd;}
