@@ -3,6 +3,10 @@
 	font-family: sans-serif;
 }
 
+h1 {
+	font-weight: 300;
+}
+
 .button-holder {
 	margin-bottom: 30px;
 	position: relative;

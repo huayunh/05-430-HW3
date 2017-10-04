@@ -6,6 +6,10 @@
 	font-family: sans-serif;
 }
 
+h1 {
+	font-weight: 400;
+}
+
 #left {
 	width: 50vw;
 	height: 100vh;
