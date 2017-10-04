@@ -21,22 +21,13 @@ function onWheel(e){
 	var nextPic;
 	var nextFrame;
 	if (e.deltaY > 0) { // if scrolling down
-		if (currentFrame < (totalFrames-1)){ // if not at the last picture
-			nextFrame = currentFrame + 1;
-			nextPic = document.getElementById('pic'+ nextFrame);
-			onAnimation = 1;
-		} else {
-			return;
-		}
+		nextFrame = (currentFrame + 1) % totalFrames;
 	} else { // if scrolling up
-		if (currentFrame != 0){ // if not at the first picture
-			nextFrame = currentFrame - 1;
-			nextPic = document.getElementById('pic'+ nextFrame);
-			onAnimation = 1;
-		} else {
-			return;
-		}
+		nextFrame = (currentFrame + totalFrames - 1) % totalFrames;
 	}
+	nextPic = document.getElementById('pic'+ nextFrame);
+	onAnimation = 1;
+
 	currentPic.classList.toggle("hidden");
 	nextPic.classList.toggle("hidden");
 
