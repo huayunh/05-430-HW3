@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Flip Stitch Pillow</title>
+	<link rel="stylesheet" type="text/css" href="general.css">
 	<link rel="stylesheet" type="text/css" href="type.css">
 </head>
 <body>
@@ -9,10 +10,15 @@
 		<a href="shape.html">choose a shape</a>
 		<a href="#">get a quote!</a>
 	</div>
-	<h1>Review your choice.</h1>
+	<div class="content">
+		<h1>Review your choice.</h1>
+		<div id="divisor"></div>
+		<p>Is this the pillow you are looking for? Please pick a color, and leave a message, so that we may get back to you.</p>
+	</div>
+
 	<main>
 		<div id="left">
-			<div id="item-pic"></div>
+			<img id="item-pic" src="dog pillow.jpg" />
 			<p>dog-shaped bed pillow</p>
 		</div>
 		<div id="right">
@@ -26,7 +32,10 @@
 			<p>your name:</p>
 			<input type="text" name="yourName" /><br />
 			<p>your email:</p>
-			<input type="email" name="yourEmail" /><br /><br />
+			<input type="email" name="yourEmail" /><br />
+			<p>anything else you would like to let us know?</p>
+			<textarea name="yourMessage" cols="70" rows="10"></textarea>
+			<br />
 			<p>We will contact you within 3 business days!</p>
 		</div>
 	</main>

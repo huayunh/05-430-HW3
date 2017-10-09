@@ -1,4 +1,4 @@
-
+// the text to rotate upon scrolling
 textList = [
 	"Tired of dull pillows? We specialize in custom decorative throw pillows.",
 	"All pillows are handmade in our artisan workshop out of Pittsburgh PA.",
@@ -10,7 +10,10 @@ window.addEventListener("wheel", onWheel);
 var onAnimation = 0;
 var currentFrame = 0;
 var totalFrames = document.getElementsByClassName("pics").length;
+var dots = document.getElementsByClassName('dot');
+dots[currentFrame].classList.add("onThisPage");
 
+// when the user scrolls, either up or down.
 function onWheel(e){
 	if (onAnimation || (e.deltaY>=-10 && e.deltaY <= 10)){
 		return;
@@ -52,7 +55,11 @@ function onWheel(e){
 		}
 	}, 50);
 	currentFrame = nextFrame;
-	var lock
+
+	for (var i = 0; i < dots.length; i++) {
+		dots[i].classList.remove("onThisPage");
+	}
+	dots[currentFrame].classList.add("onThisPage");
 }
 
 // return a string of length n
@@ -72,3 +79,27 @@ function getRandomSubarray(arr, size) {
     }
     return shuffled.slice(0, size);
 }
+
+// draw the three dots at the bottom of the page
+function redrawScroll(){
+	var frame = 0;
+	var currentActiveDot = 0;
+	setInterval(function(){
+		for (var i = 0; i < dots.length; i++) {
+			dots[i].classList.remove("active");
+		}
+		if (frame < 3){
+			if (currentActiveDot < dots.length){
+				dots[currentActiveDot].classList.add("active");
+			} 
+			currentActiveDot += 1;
+		}
+		frame += 1;
+		if (frame > 5){
+			frame = 0;
+			currentActiveDot = 0;
+		}
+	}, 200)
+}
+
+redrawScroll();

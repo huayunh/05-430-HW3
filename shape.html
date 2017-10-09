@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Flip Stitch Pillow</title>
+	<link rel="stylesheet" type="text/css" href="general.css">
 	<link rel="stylesheet" type="text/css" href="type.css">
 </head>
 <body>
@@ -9,46 +10,44 @@
 		<a href="type.html">choose a type</a>
 		<a href="detail.html">done</a>
 	</div>
-	<h1>Choose your pillow shape.</h1>
+	<div class="content">
+		<h1>Choose your pillow shape.</h1>
+		<div id="divisor"></div>
+		<p>You may choose from one of our existing template, or you may simply
+		go for a design of your own choice!</p>
+	</div>
+
 	<main class="flex-holder">
 		<div class="item" id="button1" onclick="onClick(1);">
-			<div class="img"></div>
+			<img class="img" src="square pillow.jpg">
 			<div class="description">square</div>
 		</div>
 		<div class="item" id="button2" onclick="onClick(2);">
-			<div class="img"></div>
+			<img class="img" src="round pillow2.jpg">
 			<div class="description">round</div>
 		</div>
 		<div class="item" id="button3" onclick="onClick(3);">
-			<div class="img"></div>
+			<img class="img" src="dog pillow.jpg">
 			<div class="description">dog</div>
 		</div>
 		<div class="item" id="button4" onclick="onClick(4);">
-			<div class="img"></div>
+			<img class="img" src="bear pillow.jpg">
 			<div class="description">bear</div>
 		</div>
 		<div class="item" id="button5" onclick="onClick(5);">
-			<div class="img"></div>
+			<img class="img" src="bunny pillow.jpg">
 			<div class="description">bunny</div>
 		</div>
 		<div class="item" id="button6" onclick="onClick(6);">
-			<div class="img"></div>
+			<img class="img" src="cat pillow.jpg">
 			<div class="description">cat</div>
 		</div>
 		<div class="item" id="button7" onclick="onClick(7);">
-			<div class="img"></div>
-			<div class="description">custom</div>
+			<img class="img" src="customized pillow.webp">
+			<div class="description">customize your own!</div>
 		</div>
 	</main>
 
-	<script type="text/javascript">
-		var buttons = document.getElementsByClassName("item");
-		function onClick(n){
-			for (var i = 0; i < buttons.length; i++) {
-				buttons[i].classList.remove("selected");
-			}
-			document.getElementById('button'+n).classList.add("selected");					
-		};
-	</script>
+	<script type="text/javascript" src="item-select.js"></script>
 </body>
 </html>
