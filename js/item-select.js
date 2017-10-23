@@ -60,5 +60,5 @@ function onLoadType(){
 
 function onLoadShape(){
 	var info = JSON.parse(localStorage.myPurchase);
-	addSelection(types[info.currentShape]);
+	addSelection(shapes[info.currentShape]);
 }

@@ -5,7 +5,8 @@
 	<script
 	  src="https://code.jquery.com/jquery-2.2.4.min.js"
 	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<link rel="stylesheet" type="text/css" href="css/type.css">
 	<link rel="stylesheet" type="text/css" href="css/cart.css">
@@ -20,10 +21,33 @@
 	</div>
 	
 	<main class="content">
-		<p>your name:</p>
-		<input type="text" name="yourName" /><br />
-		<p>your email:</p>
-		<input type="email" name="yourEmail" /><br />
+
+		<h1>Your shopping cart.</h1>
+		<div id="divisor"></div>
+
+		<p>
+			Please review your item below, and leave your contact information. 
+			We will contact you within the next three business days.
+		</p>
+
+		<section>
+			<table id="items">
+				<th>
+					<td>type</td><td>shape</td><td>quantity</td><td>comment</td><td></td>
+				</th>
+			</table>
+		</section>
+
+		<section>
+			<p>Your name:</p>
+			<input type="text" name="yourName" /><br />
+			<p>Your email:</p>
+			<input type="email" name="yourEmail" required="yes" /><br />
+			<p>Any comments:</p>
+			<textarea cols="80" rows="20"></textarea>
+			<a class="bordered-button" id="getQuote" href="#" onclick="getQuote();">get a quote!</a>
+		</section>
+
 	</main>
 	
 </body>

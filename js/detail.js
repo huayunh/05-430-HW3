@@ -13,22 +13,24 @@ $(function() {
 
 	placeJumpingCircle();
 	$('#more').hide();
+	changeItemTitle();
+
+	if (!JSON.parse(localStorage.myPurchase).currentShape){
+		disableButtonsAfterSubmit();
+	}
+
 	$('#quote').click(function(){
 		addNewItem(parseInt($('#quantity').val()),
 			       $('#info').val());
-		$('#quote').text('add to my shopping cart again');
-		$('#quote').disabled = true;
-		$('#quote').addClass('disabled-bordered-button');
+		disableButtonsAfterSubmit();
 		$('#jumpingCircle').text($('#quantity').val());
-		$('.button-holder a').addClass('functionally-disabled')
-							 .addClass('disabled-bordered-button')
 		$('#jumpingCircle').animate({
 			opacity: 1,
 			top: $('#cart').offset().top,
 			left: $('#cart').offset().left,
 			fontSize: '20%',
 		}, {
-			duration: 600,
+			duration: 800,
 			complete: function() {
 				updateCart();
 				$('#quote').disabled = false;
@@ -66,10 +68,18 @@ function addNewItem(quantity, info){
 		info = "None.";
 	}
 	var purchase = JSON.parse(localStorage.myPurchase);
-	var newItem = new Item(purchase.currentType, 
+
+	if ($('#quote').hasClass("disabled-bordered-button")){
+		var newItem = new Item(purchase.itemList[purchase.itemList.length-1].type, 
+							   purchase.itemList[purchase.itemList.length-1].shape, 
+							   quantity, 
+							   info);
+	} else{
+		var newItem = new Item(purchase.currentType, 
 						   purchase.currentShape, 
 						   quantity, 
 						   info);
+	}
 	purchase.currentType = undefined;
 	purchase.currentShape = undefined;
 	purchase.itemList.push(newItem);
@@ -77,6 +87,21 @@ function addNewItem(quantity, info){
 	localStorage.setItem('myPurchase', JSON.stringify(purchase));
 }
 
-function clearItem(){
-	localStorage.setItem('myPurchase', '{"itemList":[]}');
+function disableButtonsAfterSubmit(){
+	$('#quote').text('add to my shopping cart again');
+	$('#quote').addClass('disabled-bordered-button');
+	$('.button-holder a').addClass('functionally-disabled')
+						 .addClass('disabled-bordered-button')
+	$('#more').show(300);
 }
+
+function changeItemTitle(){
+	var info = JSON.parse(localStorage.myPurchase);
+	if (!info.currentShape){
+		var lastItem = info.itemList[info.itemList.length-1];
+		$('#item-title').text(lastItem.shape+'-shaped '+lastItem.type+' pillow')
+	} else {
+		$('#item-title').text(info.currentShape+'-shaped '+info.currentType+' pillow')
+	}
+}
+
