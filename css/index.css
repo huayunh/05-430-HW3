@@ -88,8 +88,10 @@ h1 {
 	transform: translate3d(-2.5px, 2.5px, 0);
 }
 
-.crimson {
-	color: crimson;
+#start {
+	font-size: 140%;
+	padding: 3px 15px;
+	width: initial;
 }
 
 #start-holder {
@@ -97,24 +99,10 @@ h1 {
 	
 }
 
-#start {
-	border: 2px crimson solid;
-	border-radius: 999px;
-	padding: 5px 20px;
-	font-size: 120%;
-}
-
-#start:hover {
-	background-color: crimson;
-	color: white;
-	transition-duration: 0.5s;
-}
-
 #about {
 	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 30px 60px;
-	color: crimson;
 	z-index: 999;
+	margin: 30px 60px;
 }

@@ -2,14 +2,27 @@
 <html>
 <head>
 	<title>Flip Stitch Pillow</title>
-	<link rel="stylesheet" type="text/css" href="general.css">
-	<link rel="stylesheet" type="text/css" href="type.css">
+
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/updateCart.js"></script>
+	<script type="text/javascript" src="js/detail.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+	<link rel="stylesheet" type="text/css" href="css/type.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 </head>
 <body>
 	<div class="button-holder">
-		<a href="shape.html">choose a shape</a>
-		<a href="#">get a quote!</a>
+		<a class="bordered-button" href="shape.html">choose a shape</a>
 	</div>
+	<a id="cart" href="cart.html">
+		<img src="assets/cart.svg" />
+		<span id="item-sum">0</span>
+	</a>
+
 	<div class="content">
 		<h1>Review your choice.</h1>
 		<div id="divisor"></div>
@@ -18,25 +31,19 @@
 
 	<main>
 		<div id="left">
-			<img id="item-pic" src="dog pillow.jpg" />
+			<img id="item-pic" src="https://img0.etsystatic.com/159/2/7152689/il_340x270.1201268516_11yy.jpg" />
 			<p>dog-shaped bed pillow</p>
 		</div>
 		<div id="right">
-			<p>pick a color:</p>
-			<div class="flex-holder">
-				<span class="color"></span>
-				<span class="color"></span>
-				<span class="color"></span>
-				<span class="color"></span>
-			</div>
-			<p>your name:</p>
-			<input type="text" name="yourName" /><br />
-			<p>your email:</p>
-			<input type="email" name="yourEmail" /><br />
-			<p>anything else you would like to let us know?</p>
-			<textarea name="yourMessage" cols="70" rows="10"></textarea>
-			<br />
-			<p>We will contact you within 3 business days!</p>
+
+			<p>How many? 
+			<input id="quantity" type="number" name="quantity" value='1'/><br /></p>
+
+			<p>Anything else you would like to let us know?<br />
+			<textarea id="info" name="yourMessage" cols="70" rows="10"></textarea>
+			</p><br />
+			<a id="quote" class="bordered-button" href="#">add to my shopping cart</a><br /><br />
+			<div id="more">You may click on the shopping cart icon on the top to check-out, or <a class="borderless-button" href="type.html">shop for more pillows</a>!</div>
 		</div>
 	</main>
 </body>
